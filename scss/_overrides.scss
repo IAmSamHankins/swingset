@@ -1,0 +1,40 @@
+//.submitButton {
+//    float: right;
+//}
+
+//ul {
+//    list-style-type: none;
+//}
+
+.commentStyle {
+    line-height: 1.5;
+    padding: 20px 20px 10px 20px;
+    border-radius: 2px;
+    background: #ecf0f1;
+    p {
+        margin: 0;
+    }
+    margin-bottom: 20px;
+}
+
+.commenterName {
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+body {
+    font-family: "Roboto";
+}
+
+p {
+    font-weight: 300;
+}
+
+.actionBar {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.replyBox {
+    display: none;
+}
