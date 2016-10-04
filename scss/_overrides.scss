@@ -6,6 +6,17 @@
 //    list-style-type: none;
 //}
 
+body {
+    font-family: "Roboto";
+}
+
+p {
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 500;
+}
 .commentStyle {
     line-height: 1.5;
     padding: 20px 20px 10px 20px;
@@ -22,14 +33,6 @@
     padding-bottom: 10px;
 }
 
-body {
-    font-family: "Roboto";
-}
-
-p {
-    font-weight: 300;
-}
-
 .actionBar {
     text-align: right;
     margin-top: 10px;
@@ -37,9 +40,17 @@ p {
 
 .replyBox {
     display: none;
-    background: #dadada;
-    padding: 10px 20px;
+//    background: #dadada;
+    border: 1px solid black;
+    padding: 15px 20px 0px 20px;
     border-radius: 4px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.replyStyle {
+    padding-left: 10px;
+    margin-left: 30px;
+    border-left: 1px solid black;
+    margin-top: 10px;
 }
