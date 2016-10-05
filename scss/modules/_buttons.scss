@@ -14,36 +14,37 @@
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
   border-radius: $global-radius;
   border: 1px solid $border-color;
   cursor: pointer;
   box-sizing: border-box;
     &:hover {
-        color: darken($btn-color, 50%);
-        border-color: darken($btn-color, 50%);
+        color: darken($btn-color, 10%);
+        border-color: darken($btn-color, 10%);
     }
-  &.flaggedButton {
+    &.flaggedButton {
         background-color: #e74c3c;
         color: white;
         border-color: #e74c3c;
     }
 }
 
-.button:hover,
-button:hover {
-  color: $secondary-color;
-  border-color: lighten($dark-grey, 33.3%);
-  outline: 0;
-}
+//.button:hover,
+//button:hover {
+//  color: $secondary-color;
+//  border-color: lighten($dark-grey, 33.3%);
+//  outline: 0;
+//}
 
 .button,
 button {
     @include btn-theme($secondary-color);
+    background-color: transparent;
 }
 
 .button.small, button.small {
     @include btn-theme($secondary-color);
+    background-color: transparent;
     height: 30px;
     line-height: 0px;
     padding: 0 20px;

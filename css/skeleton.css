@@ -436,12 +436,6 @@ p {
   display: table;
   clear: both; }
 
-.button:hover,
-button:hover {
-  color: #555555;
-  border-color: #888888;
-  outline: 0; }
-
 .button,
 button {
   display: inline-block;
@@ -456,15 +450,15 @@ button {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
   border-radius: 2px;
   border: 1px solid #bbb;
   cursor: pointer;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background-color: transparent; }
   .button:hover,
   button:hover {
-    color: black;
-    border-color: black; }
+    color: #3c3c3c;
+    border-color: #3c3c3c; }
   .button.flaggedButton,
   button.flaggedButton {
     background-color: #e74c3c;
@@ -484,17 +478,17 @@ button {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
   border-radius: 2px;
   border: 1px solid #bbb;
   cursor: pointer;
   box-sizing: border-box;
+  background-color: transparent;
   height: 30px;
   line-height: 0px;
   padding: 0 20px; }
   .button.small:hover, button.small:hover {
-    color: black;
-    border-color: black; }
+    color: #3c3c3c;
+    border-color: #3c3c3c; }
   .button.small.flaggedButton, button.small.flaggedButton {
     background-color: #e74c3c;
     color: white;
