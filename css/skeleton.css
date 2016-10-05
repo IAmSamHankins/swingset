@@ -436,6 +436,12 @@ p {
   display: table;
   clear: both; }
 
+.button:hover,
+button:hover {
+  color: #555555;
+  border-color: #888888;
+  outline: 0; }
+
 .button,
 button {
   display: inline-block;
@@ -451,10 +457,51 @@ button {
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
-  border-radius: 4px;
+  border-radius: 2px;
   border: 1px solid #bbb;
   cursor: pointer;
   box-sizing: border-box; }
+  .button:hover,
+  button:hover {
+    color: black;
+    border-color: black; }
+  .button.flaggedButton,
+  button.flaggedButton {
+    background-color: #e74c3c;
+    color: white;
+    border-color: #e74c3c; }
+
+.button.small, button.small {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 2px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 30px;
+  line-height: 0px;
+  padding: 0 20px; }
+  .button.small:hover, button.small:hover {
+    color: black;
+    border-color: black; }
+  .button.small.flaggedButton, button.small.flaggedButton {
+    background-color: #e74c3c;
+    color: white;
+    border-color: #e74c3c; }
+
+.flagButton {
+  background-color: red; }
 
 input[type="submit"], input[type="reset"], input[type="button"] {
   display: inline-block;
@@ -470,16 +517,10 @@ input[type="submit"], input[type="reset"], input[type="button"] {
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
-  border-radius: 4px;
+  border-radius: 2px;
   border: 1px solid #bbb;
   cursor: pointer;
   box-sizing: border-box; }
-
-.button:hover,
-button:hover {
-  color: #333;
-  border-color: #888888;
-  outline: 0; }
 
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
   color: #333;
@@ -534,7 +575,7 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
   padding: 6px 10px;
   background-color: #fff;
   border: 1px solid #d1d1d1;
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: none;
   box-sizing: border-box; }
 
@@ -544,7 +585,7 @@ select {
   padding: 6px 10px;
   background-color: #fff;
   border: 1px solid #d1d1d1;
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: none;
   box-sizing: border-box; }
 
@@ -617,7 +658,7 @@ code {
   white-space: nowrap;
   background: #f1f1f1;
   border: 1px solid #e1e1e1;
-  border-radius: 4px; }
+  border-radius: 2px; }
 
 pre > code {
   display: block;
@@ -690,7 +731,7 @@ h1, h2, h3, h4, h5 {
   display: none;
   border: 1px solid black;
   padding: 15px 20px 0px 20px;
-  border-radius: 4px;
+  border-radius: 2px;
   margin-top: 10px;
   margin-bottom: 10px; }
 

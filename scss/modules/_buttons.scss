@@ -1,12 +1,11 @@
 // Buttons
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.button,
-button {
+@mixin btn-theme($btn-color) {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: $secondary-color;
+  color: $btn-color;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
@@ -20,7 +19,60 @@ button {
   border: 1px solid $border-color;
   cursor: pointer;
   box-sizing: border-box;
+    &:hover {
+        color: darken($btn-color, 50%);
+        border-color: darken($btn-color, 50%);
+    }
+  &.flaggedButton {
+        background-color: #e74c3c;
+        color: white;
+        border-color: #e74c3c;
+    }
 }
+
+.button:hover,
+button:hover {
+  color: $secondary-color;
+  border-color: lighten($dark-grey, 33.3%);
+  outline: 0;
+}
+
+.button,
+button {
+    @include btn-theme($secondary-color);
+}
+
+.button.small, button.small {
+    @include btn-theme($secondary-color);
+    height: 30px;
+    line-height: 0px;
+    padding: 0 20px;
+}
+
+.flagButton{
+    background-color: red;
+}
+
+//.button,
+//button {
+//  display: inline-block;
+//  height: 38px;
+//  padding: 0 30px;
+//  color: $secondary-color;
+//  text-align: center;
+//  font-size: 11px;
+//  font-weight: 600;
+//  line-height: 38px;
+//  letter-spacing: .1rem;
+//  text-transform: uppercase;
+//  text-decoration: none;
+//  white-space: nowrap;
+//  background-color: transparent;
+//  border-radius: $global-radius;
+//  border: 1px solid $border-color;
+//  cursor: pointer;
+//  box-sizing: border-box;
+//}
 
 input {
   &[type="submit"],
@@ -44,13 +96,6 @@ input {
     cursor: pointer;
     box-sizing: border-box;
   }
-}
-
-.button:hover,
-button:hover {
-  color: $dark-grey;
-  border-color: lighten($dark-grey, 33.3%);
-  outline: 0;
 }
 
 input {
