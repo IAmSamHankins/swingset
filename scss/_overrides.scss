@@ -76,3 +76,11 @@ h1, h2, h3, h4, h5 {
     background-color: $primary-color;
     border: none;
 }
+
+.infoSection {
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    h5 {
+        margin-bottom: 0px;
+    }
+}

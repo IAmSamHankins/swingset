@@ -7,7 +7,7 @@
 $(document).ready(function(){
 
     var allowReplies = true; 
-
+    var commentTotal = 5;
     $('.replyToggle').on('click', function() {
       $(this).toggleClass('flaggedButton').toggleClass('replyToggle');
       if ($(this).text() == 'replies on'){
@@ -30,6 +30,8 @@ $(document).ready(function(){
             else {
             $('.theComments').prepend('<div class="commentStyle">' + '<p class="commenterName">' + commenterName + '</p>' + '<p>' + comment + '</p>' + '<div class="actionBar"><p>Not Accepting Replies</p><button class="small"><i class="fa fa-link fa-lg"></i>&nbsp Link</button> <button class="flagButton small"><i class="fa fa-flag fa-lg"></i>&nbsp Flag</button></div></div></div>');
             }
+            commentTotal++;
+            $('#commentNumber').html(commentTotal);
         }
         $("#commentInput").val('');
         $("#commenterNameInput").val('');

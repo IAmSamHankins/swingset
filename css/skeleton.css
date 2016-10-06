@@ -781,4 +781,10 @@ h1, h2, h3, h4, h5 {
   background-color: #33c3f0;
   border: none; }
 
+.infoSection {
+  border-bottom: 1px solid black;
+  margin-bottom: 20px; }
+  .infoSection h5 {
+    margin-bottom: 0px; }
+
 /*# sourceMappingURL=skeleton.css.map */
