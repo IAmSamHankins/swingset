@@ -27,6 +27,23 @@
         color: white;
         border-color: #e74c3c;
     }
+    &.replyToggle {
+    margin-top: 1px;
+    background-color: #2ecc71;
+    border: none;
+    color: white;
+        &:hover {
+            background-color: darken($active-color, 5%);
+        }
+    }
+    &.followButton {
+        margin-left: 10px;
+    }
+    &.followedButton {
+        background-color: #2ecc71;
+        border-color: #2ecc71;
+        color: white;
+    }
 }
 
 //.button:hover,
@@ -48,10 +65,6 @@ button {
     height: 30px;
     line-height: 0px;
     padding: 0 20px;
-}
-
-.flagButton{
-    background-color: red;
 }
 
 //.button,

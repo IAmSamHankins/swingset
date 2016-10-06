@@ -464,6 +464,23 @@ button {
     background-color: #e74c3c;
     color: white;
     border-color: #e74c3c; }
+  .button.replyToggle,
+  button.replyToggle {
+    margin-top: 1px;
+    background-color: #2ecc71;
+    border: none;
+    color: white; }
+    .button.replyToggle:hover,
+    button.replyToggle:hover {
+      background-color: #29b765; }
+  .button.followButton,
+  button.followButton {
+    margin-left: 10px; }
+  .button.followedButton,
+  button.followedButton {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+    color: white; }
 
 .button.small, button.small {
   display: inline-block;
@@ -493,9 +510,19 @@ button {
     background-color: #e74c3c;
     color: white;
     border-color: #e74c3c; }
-
-.flagButton {
-  background-color: red; }
+  .button.small.replyToggle, button.small.replyToggle {
+    margin-top: 1px;
+    background-color: #2ecc71;
+    border: none;
+    color: white; }
+    .button.small.replyToggle:hover, button.small.replyToggle:hover {
+      background-color: #29b765; }
+  .button.small.followButton, button.small.followButton {
+    margin-left: 10px; }
+  .button.small.followedButton, button.small.followedButton {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+    color: white; }
 
 input[type="submit"], input[type="reset"], input[type="button"] {
   display: inline-block;
@@ -715,11 +742,18 @@ h1, h2, h3, h4, h5 {
 
 .commenterName {
   font-weight: bold;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  display: inline;
+  font-size: 1.8rem;
+  margin-top: 10px;
+  vertical-align: middle; }
 
 .actionBar {
   text-align: right;
   margin-top: 10px; }
+
+.leftActions {
+  text-align: left; }
 
 .replyBox {
   display: none;
@@ -734,5 +768,17 @@ h1, h2, h3, h4, h5 {
   margin-left: 30px;
   border-left: 1px solid black;
   margin-top: 10px; }
+
+.csToggles {
+  background-color: #ecf0f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 2px; }
+  .csToggles fieldset {
+    margin-bottom: 10px; }
+
+.ui-checkboxradio-checked, .ui-checkboxradio-checked:hover {
+  background-color: #33c3f0;
+  border: none; }
 
 /*# sourceMappingURL=skeleton.css.map */
