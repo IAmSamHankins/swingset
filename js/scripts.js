@@ -51,6 +51,8 @@ $(document).ready(function(){
     });
     
     $(document.body).on("submit", ".replyBox", function() {
+        commentTotal++;
+        $('#commentNumber').html(commentTotal);
         if ($(this).parent().find("#replyInput").val()){
         var reply = $(this).parent().find("#replyInput").val();
         var replyName = $(this).parent().find("#replyNameInput").val();
