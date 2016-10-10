@@ -19,19 +19,54 @@
 
   <!-- CSS and JavaScript
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--
+  <link rel="stylesheet" href="/bower_components/jquery-ui/themes/base/base.css">
+      <link rel="stylesheet" href="/bower_components/jquery-ui/themes/base/all.css">
+-->
+      <link rel="stylesheet" href="/css/base/base.css">
+      <link rel="stylesheet" href="/css/base/all.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="/css/drawer/drawer.css">
   <link rel="stylesheet" href="css/skeleton.css">
-  <script src="js/jquery.js"></script>
-  <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="js/scripts.js"></script>
   <script src="https://use.fontawesome.com/0a8d2d6e24.js"></script>
+    <script src="js/drawer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.1.3/iscroll.min.js"></script>
+    <script src="js/jquery.timeago.js"></script>
+
     <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png" />
 
 </head>
-<body>
+<body class="drawer drawer--right">
+  <header role="banner">
+    <nav class="drawer-nav" role="navigation">
+      <div class="drawer-menu">
+          <div class="userInfo">
+              <img src="images/47.jpg">
+              <h5>Amanda Jones</h5>
+              <p>Philadelphia, PA</p>
+              <p id="commentingAsHeading">Display Name:</p>
+              <h6>Ham4Hamilton</h6>
+              <a href="#!">Change Display Name</a>
 
-  <!-- Primary Page Layout
+          </div>
+          </div>
+          <ul class="tabs">
+            <li> <a href="#" id="commentsTab"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp All Comments</a></li>
+            <li> <a href="#" class="tabLinks" id="settingsTab"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp Settings</a></li>
+            <li> <a href="#" class="tabLinks" id="notificationsTab"><i class="fa fa-bell" aria-hidden="true"></i>  &nbsp Notifications</a></li>
+          </ul>
+          <div id="tabContentArea">
+          </div>
+    </nav>
+  </header>  
+    
+    <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
         <div class="row">
@@ -44,18 +79,21 @@
         <div class="commentSection">
             <div class="row commenterArea">
                 <form class="commentBox">
+                    <label for="commentInput" class="commenterLabel">Commenting As</label>
+                        <div class="commenterBar">
+                            <img src="images/47.jpg">
+                                <p class="commentingAs">Ham4Hamilton
+    <br/><span class="commenterLinks"><a href="#!" class="drawer-toggle">View Profile</a> | Not You? <a href="#">(Log Out)</a></span></p>
+                    </div>  
                     <div class="row">
                         <div class="eight columns">
-                            <label for="commenterNameInput">Your Name &nbsp<a href="#">Log In</a></label>
-                            <input class="u-full-width" type="text" placeholder="e.g. Ham4Hamilton" id="commenterNameInput">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="eight columns">
-                            <label for="commentInput">Your Comment</label>
                             <textarea class="u-full-width" placeholder="Your comment here..." id="commentInput"></textarea>
                         </div>
                     </div>
+                    <div class="row">
+                    <div class="eight columns">
+                        </div>
+                    </div>                    
                     <div class="row">
                         <div class="five columns">
                           <label class="agree-tos">
@@ -68,169 +106,230 @@
                         </div>
                     </div>
                 </form>
-            </div>
             <div class="commentArea">
                 <div class="row">
-                    <div class="five columns">
-                        <h5>Reader Comments</h5>
+                    <div class="eight columns">
+                        <div class="row commentsStreamHeader">
+                        <div class="eight columns">
+                            <h5>Reader Comments</h5>
+                        </div>
+                        <div class="four columns">
+                            <select class="u-full-width" id="sortByInput">
+                                <option value="Option 1">Newest First</option>
+                                <option value="Option 2">Oldest First</option>
+                            </select>
+                        </div>
+                        </div>
                     </div>
-<!--
-                    <div class="three columns">
-                        <select class="u-full-width" id="sortByInput">
-                            <option value="Option 1">Newest First</option>
-                            <option value="Option 2">Oldest First</option>
-                        </select>
-                    </div>
--->
                 </div>
-                <div class="commentStream">
+       <div class="commentStream">
                     <div class="row">
                         <div class="eight columns theComments">
                             <div class="commentStyle">
-                                <p class="commenterName">Linda</p>
-                                <p>The Almighty RBG dispenses great advice! See the last paragraph of the article. Those are words to live by. Thank you Justice Ruth Bader Ginsburg for your service and for just being you.</p>
+                                <div class="row">
+                                    <div class="two columns">
+                                        <img src="images/33.jpg">
+                                    </div>
+                                    <div class="ten columns commentContent">
+                                        <p class="commenterName">Linda</p>
+                                        <button class="followButton small"><i class="fa fa-user fa-lg"></i>&nbsp follow</button> 
+                                        <p>The Almighty RBG dispenses great advice! See the last paragraph of the article. Those are words to live by. Thank you Justice Ruth Bader Ginsburg for your service and for just being you.</p>
+                                    </div>
+                                </div>
                                 <div class="actionBar">
                                     <button class="replyButton small"><i class="fa fa-mail-reply fa-lg"></i>&nbsp Reply</button>
                                     <button class="action link small"><i class="fa fa-link fa-lg"></i>&nbsp Link</button>
                                     <button class="flagButton small"><i class="fa fa-flag fa-lg"></i>&nbsp Flag</button>
                                 </div>
                                 <form class="replyBox">
-                                        <div class="row">
-                                            <label for="replyNameInput">Your Name &nbsp<a href="#">Log In</a></label> 
-                                            <input class="u-full-width" type="text" placeholder="e.g. Ham4Hamilton" id="replyNameInput">
-                                        </div> 
-                                        <div class="row">
-                                            <label for="replyInput">Your Comment</label>
+                                    <label for="replyInput" class="commenterLabel">Commenting As</label>
+                                        <div class="commenterBar">
+                                            <img src="images/47.jpg">
+                                            <p class="commentingAs">Ham4Hamilton
+                    <br/><span class="commenterLinks"><a href="#" class="drawer-toggle">View Profile</a> | Not You? <a href="#">(Log Out)</a></span></p>
+                                        </div>
+
                                             <textarea class="u-full-width" placeholder="Your comment here..." id="replyInput"></textarea>
+
+                                    <div class="row">
+                                        <div class="ten columns">
+                                          <label class="agree-tos">
+                                            <input type="checkbox">
+                                            <span class="label-body">Read Terms of Service</span>
+                                          </label>
                                         </div>
-                                        <div class="row">
-                                            <div class="six columns">
-                                                <label class="agree-tos">
-                                                    <input type="checkbox"><span class="label-body">Read Terms of Service</span></label>
-                                            </div>
-                                            <div class="six columns">
-                                                <input class="button-primary u-pull-right" type="submit" value="submit reply">
-                                            </div>
+                                        <div class="two columns">
+                                            <input class="button-primary u-pull-right" type="submit" value="submit comment">
                                         </div>
-                                    </form>                                               <div class="repliesArea">
+                                    </div>
+                                    </form>
+                                <div class="repliesArea">
                                 </div>
                             </div>
                             <div class="commentStyle">
-                                <p class="commenterName">umassman</p>
+                                <div class="row">
+                                    <div class="two columns">
+                                        <img src="images/41.jpg">
+                                    </div>
+                                    <div class="ten columns commentContent">
+                                        <p class="commenterName">umassman</p>
+                                        <button class="followButton small"><i class="fa fa-user fa-lg"></i>&nbsp follow</button> 
                                 <p>"Reacting in anger or annoyance will not advance one’s ability to persuade." Great quote, often spoken by my wife in her workplace in a slightly different way - "Anger or annoyance at every little (or big) thing takes so much more energy than trying to stay positive." Definitely does not advance the ability to persuade. Way to go RBG!!</p>
+                                    </div>
+                                </div>
+
                                 <div class="actionBar">
                                     <button class="replyButton small"><i class="fa fa-mail-reply fa-lg"></i>&nbsp Reply</button>
                                     <button class="small"><i class="fa fa-link fa-lg"></i>&nbsp Link</button>
                                     <button class="flagButton small"><i class="fa fa-flag fa-lg"></i>&nbsp Flag</button>
                                 </div>                      
                                 <form class="replyBox">
-                                        <div class="row">
-                                            <label for="replyNameInput">Your Name &nbsp<a href="#">Log In</a></label> 
-                                            <input class="u-full-width" type="text" placeholder="e.g. Ham4Hamilton" id="replyNameInput">
-                                        </div> 
-                                        <div class="row">
-                                            <label for="replyInput">Your Comment</label>
+                                    <label for="replyInput" class="commenterLabel">Commenting As</label>
+                                        <div class="commenterBar">
+                                            <img src="images/47.jpg">
+                                            <p class="commentingAs">Ham4Hamilton
+                    <br/><span class="commenterLinks"><a href="#" class="drawer-toggle">View Profile</a> | Not You? <a href="#">(Log Out)</a></span></p>
+                                        </div>
+
                                             <textarea class="u-full-width" placeholder="Your comment here..." id="replyInput"></textarea>
+
+                                    <div class="row">
+                                        <div class="ten columns">
+                                          <label class="agree-tos">
+                                            <input type="checkbox">
+                                            <span class="label-body">Read Terms of Service</span>
+                                          </label>
                                         </div>
-                                        <div class="row">
-                                            <div class="six columns">
-                                                <label class="agree-tos">
-                                                    <input type="checkbox"><span class="label-body">Read Terms of Service</span></label>
-                                            </div>
-                                            <div class="six columns">
-                                                <input class="button-primary u-pull-right" type="submit" value="submit reply">
-                                            </div>
+                                        <div class="two columns">
+                                            <input class="button-primary u-pull-right" type="submit" value="submit comment">
                                         </div>
-                                    </form>                                           <div class="repliesArea">
+                                    </div>
+                                    </form>                                           
+                                <div class="repliesArea">
                                 </div>               
                             </div>
                             
                             <div class="commentStyle">
-                                <p class="commenterName">Just Sayin'</p>
-                                <p>I am a female lawyer, class of 1974. In the early 1970s I found it necessary to transfer from my first-year law school in one city to a law school in another city - a difficult situation for the very few female law students at that time. Most transfers, I heard, were for (male) law students in the military. I went to hear a presentation by the then pioneer women's rights lawyer - Ruth Bader Ginsburg. After her inspiring presentation, I went up to thank her and mentioned my situation, asking for advice. This lovely, loving woman offered to write a letter for me to the law school I wanted to transfer to. She did, and I was admitted. Thanks to "my hero," I had a 40-year legal career followed by 6 years in "retirement" of teaching lawyers in and from all over the world. I hope she reads this comment and my thanks to her. I have loved her for all these years from afar and have told this story in tribute to her hundreds of times in the U.S. and abroad. Thank you, Ruth Bader Ginsburg, for my happy and successful life. I have carried your grace with me everywhere and paid forward what you did for me.</p>
+                                <div class="row">
+                                    <div class="two columns">
+                                        <img src="images/2.jpg">
+                                    </div>
+                                    <div class="ten columns commentContent">
+                                        <p class="commenterName">Just Sayin'</p>
+                                        <button class="followButton small"><i class="fa fa-user fa-lg"></i>&nbsp follow</button> 
+                                        <p>I am a female lawyer, class of 1974. In the early 1970s I found it necessary to transfer from my first-year law school in one city to a law school in another city - a difficult situation for the very few female law students at that time. Most transfers, I heard, were for (male) law students in the military. I went to hear a presentation by the then pioneer women's rights lawyer - Ruth Bader Ginsburg. After her inspiring presentation, I went up to thank her and mentioned my situation, asking for advice. This lovely, loving woman offered to write a letter for me to the law school I wanted to transfer to. She did, and I was admitted. Thanks to "my hero," I had a 40-year legal career followed by 6 years in "retirement" of teaching lawyers in and from all over the world. I hope she reads this comment and my thanks to her. I have loved her for all these years from afar and have told this story in tribute to her hundreds of times in the U.S. and abroad. Thank you, Ruth Bader Ginsburg, for my happy and successful life. I have carried your grace with me everywhere and paid forward what you did for me.</p>
+                                    </div>
+                                </div>
+                
                                 <div class="actionBar">
                                     <button class="replyButton small"><i class="fa fa-mail-reply fa-lg"></i>&nbsp Reply</button>
                                     <button class="small"><i class="fa fa-link fa-lg"></i>&nbsp Link</button>
                                     <button class="flagButton small"><i class="fa fa-flag fa-lg"></i>&nbsp Flag</button>
                                 </div>
                                 <form class="replyBox">
-                                        <div class="row">
-                                            <label for="replyNameInput">Your Name &nbsp<a href="#">Log In</a></label> 
-                                            <input class="u-full-width" type="text" placeholder="e.g. Ham4Hamilton" id="replyNameInput">
-                                        </div> 
-                                        <div class="row">
-                                            <label for="replyInput">Your Comment</label>
+                                    <label for="replyInput" class="commenterLabel">Commenting As</label>
+                                        <div class="commenterBar">
+                                            <img src="images/47.jpg">
+                                            <p class="commentingAs">Ham4Hamilton
+                    <br/><span class="commenterLinks"><a href="#" class="drawer-toggle">View Profile</a> | Not You? <a href="#">(Log Out)</a></span></p>
+                                        </div>
+
                                             <textarea class="u-full-width" placeholder="Your comment here..." id="replyInput"></textarea>
+
+                                    <div class="row">
+                                        <div class="ten columns">
+                                          <label class="agree-tos">
+                                            <input type="checkbox">
+                                            <span class="label-body">Read Terms of Service</span>
+                                          </label>
                                         </div>
-                                        <div class="row">
-                                            <div class="six columns">
-                                                <label class="agree-tos">
-                                                    <input type="checkbox"><span class="label-body">Read Terms of Service</span></label>
-                                            </div>
-                                            <div class="six columns">
-                                                <input class="button-primary u-pull-right" type="submit" value="submit reply">
-                                            </div>
+                                        <div class="two columns">
+                                            <input class="button-primary u-pull-right" type="submit" value="submit comment">
                                         </div>
+                                    </div>
                                     </form>
                                 <div class="repliesArea">
                                 </div>
                             </div>
                             <div class="commentStyle">
-                                <p class="commenterName">JZ4RBG</p>
-                                <p>The president smiles. “Jay-Z,” he says, as if the answer should be obvious. When it comes to the most meaningful pop-cultural divide of the moment, the question of whether you prefer Kanye West or Jay-Z—the top two hip-hop artists in the world, who recently joined forces for a national mega-tour called Watch the Throne—Barack Obama is clearly a Jay-Z guy. Jay-Z is about control. Jay-Z is about success. He’s a natural-born leader. </p>
+                                <div class="row">
+                                    <div class="two columns">
+                                        <img src="images/blank_avatar.jpg">
+                                    </div>
+                                    <div class="ten columns commentContent">
+                                        <p class="commenterName">JZ4RBG</p>
+                                        <button class="followButton small"><i class="fa fa-user fa-lg"></i>&nbsp follow</button> 
+                                <p>The president smiles. “Jay-Z,” he says, as if the answer should be obvious. When it comes to the most meaningful pop-cultural divide of the moment, the question of whether you prefer Kanye West or Jay-Z—the top two hip-hop artists in the world, who recently joined forces for a national mega-tour called Watch the Throne—Barack Obama is clearly a Jay-Z guy. Jay-Z is about control. Jay-Z is about success. He’s a natural-born leader. </p>                                    
+                                    </div>
+                                </div>
+
                                 <div class="actionBar">
                                     <button class="replyButton small"><i class="fa fa-mail-reply fa-lg"></i>&nbsp Reply</button>
                                     <button class="small"><i class="fa fa-link fa-lg"></i>&nbsp Link</button>
                                     <button class="flagButton small"><i class="fa fa-flag fa-lg"></i>&nbsp Flag</button>
                                 </div>
                                 <form class="replyBox">
-                                        <div class="row">
-                                            <label for="replyNameInput">Your Name &nbsp<a href="#">Log In</a></label> 
-                                            <input class="u-full-width" type="text" placeholder="e.g. Ham4Hamilton" id="replyNameInput">
-                                        </div> 
-                                        <div class="row">
-                                            <label for="replyInput">Your Comment</label>
+                                    <label for="replyInput" class="commenterLabel">Commenting As</label>
+                                        <div class="commenterBar">
+                                            <img src="images/47.jpg">
+                                            <p class="commentingAs">Ham4Hamilton
+                    <br/><span class="commenterLinks"><a href="#" class="drawer-toggle">View Profile</a> | Not You? <a href="#">(Log Out)</a></span></p>
+                                        </div>
+
                                             <textarea class="u-full-width" placeholder="Your comment here..." id="replyInput"></textarea>
+
+                                    <div class="row">
+                                        <div class="ten columns">
+                                          <label class="agree-tos">
+                                            <input type="checkbox">
+                                            <span class="label-body">Read Terms of Service</span>
+                                          </label>
                                         </div>
-                                        <div class="row">
-                                            <div class="six columns">
-                                                <label class="agree-tos">
-                                                    <input type="checkbox"><span class="label-body">Read Terms of Service</span></label>
-                                            </div>
-                                            <div class="six columns">
-                                                <input class="button-primary u-pull-right" type="submit" value="submit reply">
-                                            </div>
+                                        <div class="two columns">
+                                            <input class="button-primary u-pull-right" type="submit" value="submit comment">
                                         </div>
+                                    </div>
                                     </form>
                                 <div class="repliesArea">
                                 </div>
                             </div>
                             <div class="commentStyle">
-                                <p class="commenterName">StarsHallow</p>
-                                <p>The online streaming service will be providing "all the Luke's Diner essentials" for the staff and baristas, including branded hats and aprons. No word yet on whether there will be flannel-clad gruff proprietors running about, but dare to dream, Gilmore fans.</p>
+                                <div class="row">
+                                    <div class="two columns">
+                                        <img src="images/blank_avatar.jpg">
+                                    </div>
+                                    <div class="ten columns commentContent">
+                                    <p class="commenterName">StarsHallow</p>
+                                        <button class="followButton small"><i class="fa fa-user fa-lg"></i>&nbsp follow</button> 
+                                        <p>The online streaming service will be providing "all the Luke's Diner essentials" for the staff and baristas, including branded hats and aprons. No word yet on whether there will be flannel-clad gruff proprietors running about, but dare to dream, Gilmore fans.</p>
+                                    </div>
+                                </div>
                                 <div class="actionBar">
                                     <button class="replyButton small"><i class="fa fa-mail-reply fa-lg"></i>&nbsp Reply</button>
                                     <button class="small"><i class="fa fa-link fa-lg"></i>&nbsp Link</button>
                                     <button class="flagButton small"><i class="fa fa-flag fa-lg"></i>&nbsp Flag</button>
                                 </div>
                                 <form class="replyBox">
-                                        <div class="row">
-                                            <label for="replyNameInput">Your Name &nbsp<a href="#">Log In</a></label> 
-                                            <input class="u-full-width" type="text" placeholder="e.g. Ham4Hamilton" id="replyNameInput">
-                                        </div> 
-                                        <div class="row">
-                                            <label for="replyInput">Your Comment</label>
+                                    <label for="replyInput" class="commenterLabel">Commenting As</label>
+                                        <div class="commenterBar">
+                                            <img src="images/47.jpg">
+                                            <p class="commentingAs">Ham4Hamilton
+                    <br/><span class="commenterLinks"><a href="#" class="drawer-toggle">View Profile</a> | Not You? <a href="#">(Log Out)</a></span></p>
+                                        </div>
+
                                             <textarea class="u-full-width" placeholder="Your comment here..." id="replyInput"></textarea>
+
+                                    <div class="row">
+                                        <div class="ten columns">
+                                          <label class="agree-tos">
+                                            <input type="checkbox">
+                                            <span class="label-body">Read Terms of Service</span>
+                                          </label>
                                         </div>
-                                        <div class="row">
-                                            <div class="six columns">
-                                                <label class="agree-tos">
-                                                    <input type="checkbox"><span class="label-body">Read Terms of Service</span></label>
-                                            </div>
-                                            <div class="six columns">
-                                                <input class="button-primary u-pull-right" type="submit" value="submit reply">
-                                            </div>
+                                        <div class="two columns">
+                                            <input class="button-primary u-pull-right" type="submit" value="submit comment">
                                         </div>
+                                    </div>
                                     </form>
                                 <div class="repliesArea">
                                 </div>

@@ -17,24 +17,44 @@ p {
 h1, h2, h3, h4, h5 {
     font-weight: 500;
 }
+
+textarea {
+    height: 100px;
+}
 .commentStyle {
     line-height: 1.5;
-    padding: 20px 20px 10px 20px;
-    border-radius: $global-radius;
-    background: #ecf0f1;
+    border-bottom: 1px solid $line-color;
+//    border-radius: $global-radius;
+//    background: #ecf0f1;
     p {
-        margin: 0;
+        margin-bottom: 0;
+        margin-top: 5px;
+        font-size: 1.4rem;
     }
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    a {
+        text-decoration: none;
+    }
 }
 
-.commenterName {
+.commenterName, .commentingAs {
     font-weight: bold;
     padding-bottom: 10px;
     display: inline;
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
     margin-top: 10px;
     vertical-align: middle;
+    margin-bottom: 20px;
+}
+
+.commentingAs {
+    vertical-align: top;
+    margin-bottom: 0px;
+    line-height: 1.2;
+    padding-bottom: 0px;
+    display: inline-block;
+    margin-top: 0px;
+    margin-left: 10px;
 }
 
 .actionBar {
@@ -48,7 +68,7 @@ h1, h2, h3, h4, h5 {
 .replyBox {
     display: none;
 //    background: #dadada;
-    border: 1px solid black;
+    border: 1px solid $line-color;
     padding: 15px 20px 0px 20px;
     border-radius: $global-radius;
     margin-top: 10px;
@@ -56,10 +76,11 @@ h1, h2, h3, h4, h5 {
 }
 
 .replyStyle {
-    padding-left: 10px;
-    margin-left: 30px;
-    border-left: 1px solid black;
+    padding: 10px;
+    margin-left: 20px;
     margin-top: 10px;
+    background: #ECF0F1;
+    margin-bottom: 10px;
 }
 
 .csToggles {
@@ -82,5 +103,103 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 20px;
     h5 {
         margin-bottom: 0px;
+    }
+}
+
+.icon {
+    font-size: 18px;
+}
+
+img {
+    width: 50px;
+    display: inline;
+}
+
+.commenterLabel {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.commenterLinks {
+    font-weight: 300;
+    padding-top: 20px;
+    font-size: 1.4rem;
+    display: inline;
+}
+
+.commenterBar {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.commentsStreamHeader {
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.drawer-menu {
+    padding: 20px;
+    overflow: scroll;
+}
+
+.tabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #dadada;
+    li {
+        float:left;
+        margin: 0;
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: $primary-color;
+            color: white;
+            font-weight: 300;
+            text-decoration: none;
+            &:hover {
+                background-color: darken($primary-color, 10%);
+            }
+        }
+    }
+}
+
+.activeTab {
+     background-color: darken($primary-color, 10%) !important;
+}
+
+#tabContentArea {
+    overflow: scroll;
+}
+
+.userInfo {
+    text-align: center;
+    h5, h6 {
+        margin-bottom: 0px;
+    }
+    a {
+        font-size: 1.2rem;
+    }
+    #commentingAsHeading {
+        font-weight: 500;
+        margin-bottom: 0px;
+    }
+}
+
+.profileCommentBar {
+    margin-top: 10px;
+}
+
+.commentContent {
+    margin-left: 0% !important;
+}
+
+.commentHistory {
+    padding: 0px 20px;
+    .commentStyle {
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }

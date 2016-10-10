@@ -19,10 +19,6 @@
 
   <!-- CSS and JavaScript
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<!--
-  <link rel="stylesheet" href="/bower_components/jquery-ui/themes/base/base.css">
-      <link rel="stylesheet" href="/bower_components/jquery-ui/themes/base/all.css">
--->
       <link rel="stylesheet" href="/css/base/base.css">
       <link rel="stylesheet" href="/css/base/all.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
@@ -41,30 +37,34 @@
   <link rel="icon" type="image/png" href="images/favicon.png" />
 
 </head>
-<body>
+<body class="drawer drawer--right">
+  <header role="banner">
+    <nav class="drawer-nav" role="navigation">
+      <div class="drawer-menu">
+          <div class="userInfo">
+              <img src="images/47.jpg">
+              <h5>Amanda Jones</h5>
+              <p>Philadelphia, PA</p>
+              <p id="commentingAsHeading">Display Name:</p>
+              <h6>Ham4Hamilton</h6>
+              <a href="#!">Change Display Name</a>
 
+          </div>
+          </div>
+          <ul class="tabs">
+            <li> <a href="#" id="commentsTab"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp All Comments</a></li>
+            <li> <a href="#" class="tabLinks" id="settingsTab"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp Settings</a></li>
+            <li> <a href="#" class="tabLinks" id="notificationsTab"><i class="fa fa-bell" aria-hidden="true"></i>  &nbsp Notifications</a></li>
+          </ul>
+          <div id="tabContentArea">
+          </div>
+      </div>
+    </nav>
+  </header>
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<section class="articleContent">
     <div class="container">
         <div class="row">
-            <div class="ten columns">
-                <h2>Crazy news article headline that grabbed your attention!</h2>
-                <p>Af kitsch semiotics sustainable, migas ex tofu fixie labore delectus bitters. Photo booth edison bulb aliquip, lumbersexual tbh vape ennui brooklyn keytar. Officia mlkshk hell of, eiusmod brooklyn commodo thundercats scenester farm-to-table aliqua raw denim DIY nesciunt. Paleo aesthetic aliquip kombucha odio chia, pickled street art tacos jianbing occupy kale chips. IPhone non enim church-key bushwick, mixtape viral commodo art party man bun chartreuse PBR&B. Semiotics poutine roof party art party live-edge gastropub. Meh chartreuse 3 wolf moon, exercitation gastropub lumbersexual 8-bit salvia hot chicken brooklyn woke street art irure fingerstache.<br/><br/>
-
-Pop-up locavore glossier kombucha bicycle rights, godard hella truffaut poke bitters iPhone proident. Heirloom beard quis deep v synth, schlitz occaecat freegan exercitation cupidatat chia portland nihil live-edge twee. Distillery crucifix vegan, chambray polaroid normcore intelligentsia. Austin direct trade brunch, banjo before they sold out brooklyn odio lumbersexual. Af actually four dollar toast polaroid coloring book health goth. Pickled mumblecore tempor flexitarian VHS. Slow-carb hoodie microdosing, DIY kickstarter fanny pack umami lumbersexual irure bitters vice.<br/><br/>
-
-Gluten-free neutra austin roof party. Vinyl excepteur tempor before they sold out cray tilde, aute deserunt helvetica odio pabst mustache shabby chic labore polaroid. Qui hashtag scenester cliche veniam chambray. Pabst heirloom literally whatever, truffaut culpa nihil trust fund cillum humblebrag. Lumbersexual lomo whatever, microdosing live-edge mollit locavore cardigan brunch. Quis sartorial nihil, commodo cillum bespoke master cleanse before they sold out. Jean shorts artisan bespoke retro, ennui small batch gentrify reprehenderit duis aute craft beer.<br/><br/>
-
-Polaroid sunt labore, irure eu mollit deep v swag bicycle rights selvage church-key unicorn crucifix sed everyday carry. Cornhole prism butcher quis affogato, scenester pour-over put a bird on it magna normcore readymade vaporware single-origin coffee ramps. Pop-up placeat pinterest portland, accusamus vinyl nihil mlkshk bespoke four loko. Schlitz art party you probably haven't heard of them eiusmod, tempor shoreditch cronut cupidatat flexitarian small batch venmo. Delectus disrupt listicle reprehenderit. Yr small batch cred, umami iPhone you probably haven't heard of them quinoa coloring book snackwave whatever. Butcher literally sint cupidatat fap, brooklyn pork belly fashion axe.<br/><br/>
-
-Biodiesel hella crucifix ramps. Iceland minim pariatur 3 wolf moon. Fugiat hot chicken dolor, gastropub incididunt XOXO live-edge man bun vape qui. Banh mi duis normcore photo booth, coloring book hot chicken et farm-to-table voluptate forage eiusmod. 8-bit wayfarers succulents, eu flannel pitchfork godard enamel pin bespoke lomo velit pok pok. Neutra consectetur next level affogato direct trade. Literally 8-bit ad wolf, four loko locavore taxidermy vegan edison bulb messenger bag coloring book.</p>
-            </div>
-        </div>
-    </div>
-</section>
-    <div class="container">
-       <div class="row">
             <div class="eight columns">
             <div class="infoSection">
                 <h5><span id="commentNumber">5</span> Comments</h5>
@@ -79,37 +79,13 @@ Biodiesel hella crucifix ramps. Iceland minim pariatur 3 wolf moon. Fugiat hot c
                         <div class="commenterBar">
                             <img src="images/47.jpg">
                             <p class="commentingAs">Ham4Hamilton
-    <br/><span class="commenterLinks"><a href="#">Edit Profile</a> | Not You? <a href="#">(Log Out)</a></span></p>
+    <br/><span class="commenterLinks"><a href="#" class="drawer-toggle">View Profile</a> | Not You? <a href="#">(Log Out)</a></span></p>
                         </div>
                     <div class="row">
                         <div class="eight columns">
                             <textarea class="u-full-width" placeholder="Your comment here..." id="commentInput"></textarea>
                         </div>
                     </div>
-                    <div class="row">
-                    <div class="eight columns">
-                    <div class="row csToggles">
-                        <div class="ten columns">
-                        <div class="widget">
-                          <fieldset>
-                            <legend>Select Audience: </legend>
-                            <label for="radio-1">Public</label>
-                            <input type="radio" name="radio-1" id="radio-1" checked="checked" data-audience="publicView">
-                            <label for="radio-2">Logged-in readers</label>
-                            <input type="radio" name="radio-1" id="radio-2" data-audience="loggedInView">
-                            <label for="radio-4">Newsroom Only</label>
-                            <input type="radio" name="radio-1" id="radio-4" data-audience="newsroomView">
-                          </fieldset>
-                        </div>
-                        </div>
-                        <div class="two columns">
-                        <label class="u-pull-right"> Replies</label>
-                        <button class="replyToggle small u-pull-right" type="button">replies on</button>
-                    </div>
-                    </div>
-
-                        </div>
-                    </div>                    
                     <div class="row">
                         <div class="five columns">
                           <label class="agree-tos">
@@ -143,7 +119,7 @@ Biodiesel hella crucifix ramps. Iceland minim pariatur 3 wolf moon. Fugiat hot c
                     <div class="row">
                         <div class="eight columns theComments">
                             <div class="commentStyle">
-                                <p class="commenterName">Linda</p>  
+                                <p class="commenterName">Linda</p>
                                 <p>The Almighty RBG dispenses great advice! See the last paragraph of the article. Those are words to live by. Thank you Justice Ruth Bader Ginsburg for your service and for just being you.</p>
                                 <div class="actionBar">
                                     <button class="replyButton small"><i class="fa fa-mail-reply fa-lg"></i>&nbsp Reply</button>
@@ -173,7 +149,6 @@ Biodiesel hella crucifix ramps. Iceland minim pariatur 3 wolf moon. Fugiat hot c
                             </div>
                             <div class="commentStyle">
                                 <p class="commenterName">umassman</p>
-                                     
                                 <p>"Reacting in anger or annoyance will not advance one’s ability to persuade." Great quote, often spoken by my wife in her workplace in a slightly different way - "Anger or annoyance at every little (or big) thing takes so much more energy than trying to stay positive." Definitely does not advance the ability to persuade. Way to go RBG!!</p>
                                 <div class="actionBar">
                                     <button class="replyButton small"><i class="fa fa-mail-reply fa-lg"></i>&nbsp Reply</button>
@@ -204,7 +179,6 @@ Biodiesel hella crucifix ramps. Iceland minim pariatur 3 wolf moon. Fugiat hot c
                             
                             <div class="commentStyle">
                                 <p class="commenterName">Just Sayin'</p>
-                                 
                                 <p>I am a female lawyer, class of 1974. In the early 1970s I found it necessary to transfer from my first-year law school in one city to a law school in another city - a difficult situation for the very few female law students at that time. Most transfers, I heard, were for (male) law students in the military. I went to hear a presentation by the then pioneer women's rights lawyer - Ruth Bader Ginsburg. After her inspiring presentation, I went up to thank her and mentioned my situation, asking for advice. This lovely, loving woman offered to write a letter for me to the law school I wanted to transfer to. She did, and I was admitted. Thanks to "my hero," I had a 40-year legal career followed by 6 years in "retirement" of teaching lawyers in and from all over the world. I hope she reads this comment and my thanks to her. I have loved her for all these years from afar and have told this story in tribute to her hundreds of times in the U.S. and abroad. Thank you, Ruth Bader Ginsburg, for my happy and successful life. I have carried your grace with me everywhere and paid forward what you did for me.</p>
                                 <div class="actionBar">
                                     <button class="replyButton small"><i class="fa fa-mail-reply fa-lg"></i>&nbsp Reply</button>
@@ -235,7 +209,6 @@ Biodiesel hella crucifix ramps. Iceland minim pariatur 3 wolf moon. Fugiat hot c
                             </div>
                             <div class="commentStyle">
                                 <p class="commenterName">JZ4RBG</p>
-                                 
                                 <p>The president smiles. “Jay-Z,” he says, as if the answer should be obvious. When it comes to the most meaningful pop-cultural divide of the moment, the question of whether you prefer Kanye West or Jay-Z—the top two hip-hop artists in the world, who recently joined forces for a national mega-tour called Watch the Throne—Barack Obama is clearly a Jay-Z guy. Jay-Z is about control. Jay-Z is about success. He’s a natural-born leader. </p>
                                 <div class="actionBar">
                                     <button class="replyButton small"><i class="fa fa-mail-reply fa-lg"></i>&nbsp Reply</button>
@@ -266,7 +239,6 @@ Biodiesel hella crucifix ramps. Iceland minim pariatur 3 wolf moon. Fugiat hot c
                             </div>
                             <div class="commentStyle">
                                 <p class="commenterName">StarsHallow</p>
-                                 
                                 <p>The online streaming service will be providing "all the Luke's Diner essentials" for the staff and baristas, including branded hats and aprons. No word yet on whether there will be flannel-clad gruff proprietors running about, but dare to dream, Gilmore fans.</p>
                                 <div class="actionBar">
                                     <button class="replyButton small"><i class="fa fa-mail-reply fa-lg"></i>&nbsp Reply</button>

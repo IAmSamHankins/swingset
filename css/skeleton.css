@@ -207,9 +207,9 @@ body {
   color: #222; }
 
 a {
-  color: #1eaedb; }
+  color: #85c1ea; }
   a:hover {
-    color: #1b9cc5; }
+    color: #6fb6e7; }
 
 hr {
   margin-top: 3rem;
@@ -502,7 +502,7 @@ button {
   background-color: transparent;
   height: 30px;
   line-height: 0px;
-  padding: 0 20px; }
+  padding: 0 15px; }
   .button.small:hover, button.small:hover {
     color: #3c3c3c;
     border-color: #3c3c3c; }
@@ -562,35 +562,35 @@ input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focu
 .button.button-primary,
 button.button-primary {
   color: #fff;
-  background-color: #33c3f0;
-  border-color: #33c3f0; }
+  background-color: #59ABE3;
+  border-color: #59ABE3; }
 
 input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
   color: #fff;
-  background-color: #33c3f0;
-  border-color: #33c3f0; }
+  background-color: #59ABE3;
+  border-color: #59ABE3; }
 
 .button.button-primary:hover,
 button.button-primary:hover {
   color: #fff;
-  background-color: #1eaedb;
-  border-color: #1eaedb; }
+  background-color: #85c1ea;
+  border-color: #85c1ea; }
 
 input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover {
   color: #fff;
-  background-color: #1eaedb;
-  border-color: #1eaedb; }
+  background-color: #85c1ea;
+  border-color: #85c1ea; }
 
 .button.button-primary:focus,
 button.button-primary:focus {
   color: #fff;
-  background-color: #1eaedb;
-  border-color: #1eaedb; }
+  background-color: #85c1ea;
+  border-color: #85c1ea; }
 
 input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
   color: #fff;
-  background-color: #1eaedb;
-  border-color: #1eaedb; }
+  background-color: #85c1ea;
+  border-color: #85c1ea; }
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"] {
   height: 38px;
   padding: 6px 10px;
@@ -624,12 +624,12 @@ textarea {
   padding-bottom: 6px; }
 
 input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus {
-  border: 1px solid #33c3f0;
+  border: 1px solid #59ABE3;
   outline: 0; }
 
 textarea:focus,
 select:focus {
-  border: 1px solid #33c3f0;
+  border: 1px solid #59ABE3;
   outline: 0; }
 
 label,
@@ -731,22 +731,37 @@ p {
 h1, h2, h3, h4, h5 {
   font-weight: 500; }
 
+textarea {
+  height: 100px; }
+
 .commentStyle {
   line-height: 1.5;
-  padding: 20px 20px 10px 20px;
-  border-radius: 2px;
-  background: #ecf0f1;
-  margin-bottom: 20px; }
+  border-bottom: 1px solid #bfbfbf;
+  margin-bottom: 10px; }
   .commentStyle p {
-    margin: 0; }
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-size: 1.4rem; }
+  .commentStyle a {
+    text-decoration: none; }
 
-.commenterName {
+.commenterName, .commentingAs {
   font-weight: bold;
   padding-bottom: 10px;
   display: inline;
-  font-size: 1.8rem;
+  font-size: 1.8rem !important;
   margin-top: 10px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  margin-bottom: 20px; }
+
+.commentingAs {
+  vertical-align: top;
+  margin-bottom: 0px;
+  line-height: 1.2;
+  padding-bottom: 0px;
+  display: inline-block;
+  margin-top: 0px;
+  margin-left: 10px; }
 
 .actionBar {
   text-align: right;
@@ -757,17 +772,18 @@ h1, h2, h3, h4, h5 {
 
 .replyBox {
   display: none;
-  border: 1px solid black;
+  border: 1px solid #bfbfbf;
   padding: 15px 20px 0px 20px;
   border-radius: 2px;
   margin-top: 10px;
   margin-bottom: 10px; }
 
 .replyStyle {
-  padding-left: 10px;
-  margin-left: 30px;
-  border-left: 1px solid black;
-  margin-top: 10px; }
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+  background: #ECF0F1;
+  margin-bottom: 10px; }
 
 .csToggles {
   background-color: #ecf0f1;
@@ -778,7 +794,7 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px; }
 
 .ui-checkboxradio-checked, .ui-checkboxradio-checked:hover {
-  background-color: #33c3f0;
+  background-color: #59ABE3;
   border: none; }
 
 .infoSection {
@@ -786,5 +802,82 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 20px; }
   .infoSection h5 {
     margin-bottom: 0px; }
+
+.icon {
+  font-size: 18px; }
+
+img {
+  width: 50px;
+  display: inline; }
+
+.commenterLabel {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0px; }
+
+.commenterLinks {
+  font-weight: 300;
+  padding-top: 20px;
+  font-size: 1.4rem;
+  display: inline; }
+
+.commenterBar {
+  margin-top: 5px;
+  margin-bottom: 10px; }
+
+.commentsStreamHeader {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px; }
+
+.drawer-menu {
+  padding: 20px;
+  overflow: scroll; }
+
+.tabs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #dadada; }
+  .tabs li {
+    float: left;
+    margin: 0; }
+    .tabs li a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #59ABE3;
+      color: white;
+      font-weight: 300;
+      text-decoration: none; }
+      .tabs li a:hover {
+        background-color: #2d95dc; }
+
+.activeTab {
+  background-color: #2d95dc !important; }
+
+#tabContentArea {
+  overflow: scroll; }
+
+.userInfo {
+  text-align: center; }
+  .userInfo h5, .userInfo h6 {
+    margin-bottom: 0px; }
+  .userInfo a {
+    font-size: 1.2rem; }
+  .userInfo #commentingAsHeading {
+    font-weight: 500;
+    margin-bottom: 0px; }
+
+.profileCommentBar {
+  margin-top: 10px; }
+
+.commentContent {
+  margin-left: 0% !important; }
+
+.commentHistory {
+  padding: 0px 20px; }
+  .commentHistory .commentStyle {
+    padding-top: 10px;
+    padding-bottom: 10px; }
 
 /*# sourceMappingURL=skeleton.css.map */
