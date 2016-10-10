@@ -2,7 +2,6 @@ $(document).ready(function(){
     var allowReplies = true; 
     var commentTotal = 5;
     var replyName = "Ham4Hamilton";
-    jQuery("time.timeago").timeago();
     $('.drawer').drawer();
     $('.replyToggle').on('click', function() {
       $(this).toggleClass('flaggedButton').toggleClass('replyToggle');
@@ -59,7 +58,7 @@ $(document).ready(function(){
         $("#replyNameInput").val('');
         return false;
     });
-        $(document.body).on("click", ".replyButton", function(){
+    $(document.body).on("click", ".replyButton", function(){
         $(this).closest('.commentStyle').find('.replyBox').slideToggle();
     });
     $( "input[type='radio']" ).checkboxradio({
